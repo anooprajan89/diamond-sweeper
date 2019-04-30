@@ -11,7 +11,8 @@ $(".reset, .reply").click(function() {
   $(".cell").addClass("unknown");
   $(".cell").removeClass("found");
   totalCount();
-  totalDiamont();
+  totalDiamond();
+  $(".success-wrap").removeClass("show");
 });
 
 
@@ -48,16 +49,16 @@ $(".cell").click(function(){
   }
 
   if($(".found").length >= 8){
-    alert('Completed');
+    $(".success-wrap").addClass("show");
   }
   totalCount(); // Count of total cell opened
-  totalDiamont(); // Count of diamond found 
+  totalDiamond(); // Count of diamond found 
 });
 
 
 $( document ).ready(function() {
   totalCount();
-  totalDiamont();
+  totalDiamond();
 })
 
 function totalCount(){
@@ -65,7 +66,7 @@ function totalCount(){
   $(".total-value").text(count)
 }
 
-function totalDiamont(){  
+function totalDiamond(){  
   var foundCount = 0;
   foundCount = $(".diamondsweeper-board").find(".found").length;
   $(".total-diamond").text(foundCount);

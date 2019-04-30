@@ -8,6 +8,7 @@ body{
   border: 0;
   padding: 0;
   margin: 0;
+  background: #e6e6e6;
 }
 *{
   outline: 0;
@@ -15,40 +16,127 @@ body{
 }
 
 #container{
-  width: rem(400);
-  margin: 0 auto;
+  width: rem(480);
+  margin: rem(20) auto 0 auto;
+  padding: rem(20);
+  background: #fff;
+  border-radius: rem(5);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+  .messages{
+    padding: rem(20) 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: rem(20);
+    color: #333;
+  }
+  .button-container{
+    text-align: right;
+    .reset{
+      margin-right: rem(5);
+      background: #12bf12;
+      border: 0;
+      color: #fff;
+      padding: rem(10) rem(20);
+      border-radius: rem(5);
+      text-shadow: rem(1) rem(1) rem(1) #035d03;
+      margin-bottom: rem(20);
+      cursor: pointer;
+    }
+  }
   .diamondsweeper-board{
     height: rem(400);
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
     .cell {
-      height: calc(100% / 9);
-      width: calc(100% / 9);
-      display: inline-block;
-      border: 1px solid #333;
-      background-size: 70%;
+      height: calc(100% / 8);
+      width: calc(100% / 8);      
+      background-size: 54%;
       background-repeat: no-repeat;
       background-position: 50% 50%;
-      margin: 5px;
+      position: relative;
       cursor: pointer;
+      &:after{
+        position: absolute;
+        content: "";
+        border: 1px solid #ccc;
+        top: rem(5);
+        right: rem(5);
+        bottom: rem(5);
+        left: rem(5);
+      }
       &.diamond {
-        background-image: url(diamond.png);
+        background-image: url(../images/diamond.png);
       }    
       &.arrow {
-        background-image: url(arrow.png);
+        background-image: url(../images/arrow.png);
         &:active {
           background-color: #b5fbb7;          
         }
       }
     
       &.unknown {
-        background-image: url(question.png);
+        background-image: url(../images/question.png);
       }
       &:active {
         background-color: #e6e6e6;
-        box-shadow: 0 5px gray;
-        transform: translateY(6px);
+        transform: translateY(3px);
         transition: all 0.3s;
       }
     }
+    .success-wrap{
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.6);  
+      text-align: center;
+      display: none;
+      &.show{
+        display: block;
+      }
+      .winner{
+        width: rem(150);
+        height: rem(150);
+        background-image: url(../images/winner.png);
+        background-position: 100% 100%;
+        background-size: 100%;
+        margin: rem(40) auto 0 auto;
+      }
+      h2{
+        font-size: rem(36);
+        color: #fff;
+        line-height: rem(35);
+        font-weight: bold;
+        text-shadow: 1px 1px 0px #000;
+      }
+      h5{
+        font-size: rem(22);
+        color: #fff;
+        line-height: rem(18);
+        margin: rem(10) 0 rem(20) 0;
+        font-weight: normal;
+        text-shadow: 1px 1px 0px #000;
+      }      
+      .total-value{
+        font-weight: bold;
+        color: #ffb229;
+      }
+      .reply{
+        background: #12bf12;
+        border: 0;
+        color: #fff;
+        font-weight: bold;
+        padding: rem(20) rem(30);
+        border-radius: rem(5);        
+        margin: 0 auto;
+        font-size: rem(20);
+        text-shadow: rem(1) rem(1) rem(1) #035d03;
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.49);
+        cursor: pointer;
+      }
+    }    
   }
 }
