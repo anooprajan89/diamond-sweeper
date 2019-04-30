@@ -1,0 +1,54 @@
+/* Pixel to REM */
+$browser-context: 16; // Default.resource-categories
+@function rem($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}rem;
+}
+
+body{
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+*{
+  outline: 0;
+  box-sizing: border-box;
+}
+
+#container{
+  width: rem(400);
+  margin: 0 auto;
+  .diamondsweeper-board{
+    height: rem(400);
+    margin: 0 auto;
+    .cell {
+      height: calc(100% / 9);
+      width: calc(100% / 9);
+      display: inline-block;
+      border: 1px solid #333;
+      background-size: 70%;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      margin: 5px;
+      cursor: pointer;
+      &.diamond {
+        background-image: url(diamond.png);
+      }    
+      &.arrow {
+        background-image: url(arrow.png);
+        &:active {
+          background-color: #b5fbb7;          
+        }
+      }
+    
+      &.unknown {
+        background-image: url(question.png);
+      }
+      &:active {
+        background-color: #e6e6e6;
+        box-shadow: 0 5px gray;
+        transform: translateY(6px);
+        transition: all 0.3s;
+      }
+    }
+  }
+}
