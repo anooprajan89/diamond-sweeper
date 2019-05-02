@@ -43,6 +43,11 @@ function shuffle(nodes, switchableSelector) {
 // Open boxes
 $(".cell").click(function(){
   $(this).removeClass("unknown");
+
+  var nextEle = $(this).index();
+  if(indexOf(nextEle).hasClass("cell")){
+    alert("hi");
+  }
   
   if($(this).hasClass("diamond")){
     $(this).addClass("found");
@@ -63,7 +68,8 @@ $( document ).ready(function() {
 
 function totalCount(){
   var count = $(".diamondsweeper-board").find(".unknown").length;
-  $(".total-value").text(count)
+  $(".total-value").text(64 - count);
+  $(".final-point").text(count);
 }
 
 function totalDiamond(){  

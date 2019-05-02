@@ -8,7 +8,7 @@ body{
   border: 0;
   padding: 0;
   margin: 0;
-  background: #e6e6e6;
+  background: #000c2d;
 }
 *{
   outline: 0;
@@ -20,7 +20,6 @@ body{
   margin: rem(20) auto 0 auto;
   padding: rem(20);
   background: #fff;
-  border-radius: rem(5);
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
   .messages{
     padding: rem(20) 0;
@@ -37,7 +36,6 @@ body{
       border: 0;
       color: #fff;
       padding: rem(10) rem(20);
-      border-radius: rem(5);
       text-shadow: rem(1) rem(1) rem(1) #035d03;
       margin-bottom: rem(20);
       cursor: pointer;
@@ -60,7 +58,7 @@ body{
       &:after{
         position: absolute;
         content: "";
-        border: 1px solid #ccc;
+        border: 1px solid #ff8383;
         top: rem(5);
         right: rem(5);
         bottom: rem(5);
@@ -68,6 +66,9 @@ body{
       }
       &.diamond {
         background-image: url(../images/diamond.png);
+        &:after{
+          border-color: #4caf50;
+        }
       }    
       &.arrow {
         background-image: url(../images/arrow.png);
@@ -78,6 +79,9 @@ body{
     
       &.unknown {
         background-image: url(../images/question.png);
+        &:after{
+          border-color: #ccc;
+        }
       }
       &:active {
         background-color: #e6e6e6;
@@ -111,6 +115,7 @@ body{
         line-height: rem(35);
         font-weight: bold;
         text-shadow: 1px 1px 0px #000;
+        margin-top: 0;
       }
       h5{
         font-size: rem(22);
@@ -120,7 +125,7 @@ body{
         font-weight: normal;
         text-shadow: 1px 1px 0px #000;
       }      
-      .total-value{
+      .final-point{
         font-weight: bold;
         color: #ffb229;
       }
@@ -129,8 +134,7 @@ body{
         border: 0;
         color: #fff;
         font-weight: bold;
-        padding: rem(20) rem(30);
-        border-radius: rem(5);        
+        padding: rem(20) rem(30);  
         margin: 0 auto;
         font-size: rem(20);
         text-shadow: rem(1) rem(1) rem(1) #035d03;
