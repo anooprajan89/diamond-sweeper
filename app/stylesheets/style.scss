@@ -69,11 +69,40 @@ body{
         &:after{
           border-color: #4caf50;
         }
-      }    
-      &.arrow {
-        background-image: url(../images/arrow.png);
-        &:active {
-          background-color: #b5fbb7;          
+      }      
+      &.diamond-top, 
+      &.diamond-bottom, 
+      &.diamond-right, 
+      &.diamond-left {
+        position: relative;
+        &:before{
+          content: "";
+          position: absolute;          
+          background: no-repeat url(../images/arrow.gif);
+          background-position: 50% 50%;
+          background-size: 70%;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+        }          
+      }
+      &.diamond-top{
+        &:before{
+          -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+        }    
+      }
+      &.diamond-right {
+        &:before{
+          -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+        }       
+      }
+      &.diamond-left{
+        &:before{
+          -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
         }
       }
     
