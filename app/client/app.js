@@ -58,18 +58,22 @@ $(".cell").click(function () {
       $(".cell").eq(indexClicked).addClass('diamond-right');
     } else if ($(".cell").eq(indexPrev).hasClass('diamond') && !$(".cell").eq(indexPrev).hasClass('found')) {
       $(".cell").eq(indexClicked).addClass('diamond-left');
-    } else if ($(".cell").eq(indexTop).hasClass('diamond') && !$(".cell").eq(indexTop).hasClass('found')) {
+    } else if ($(".cell").eq(indexTop).hasClass('diamond') &&
+      !$(".cell").eq(indexTop).hasClass('found') &&
+      !(indexClicked >= 0 && indexClicked <= 7)) {
       $(".cell").eq(indexClicked).addClass('diamond-top');
-    } else if ($(".cell").eq(indexBottom).hasClass('diamond') && !$(".cell").eq(indexBottom).hasClass('found')) {
+    } else if ($(".cell").eq(indexBottom).hasClass('diamond') &&
+      !$(".cell").eq(indexBottom).hasClass('found') &&
+      !(indexClicked >= 57 && indexClicked <= 64)) {
       $(".cell").eq(indexClicked).addClass('diamond-bottom');
     } else {
-      
+
     }
   }
-  
 
-  $(".cell").click(function(){
-    if ($(this).hasClass('diamond')){
+
+  $(".cell").click(function () {
+    if ($(this).hasClass('diamond')) {
       $(this).addClass("found");
     }
   });
