@@ -2,7 +2,7 @@
 
 The goal of this exercise is to build a game.
 
-## Game application Description
+## Description about the app
 
 * The game board has 8x8 squares (initially, all represented by question marks).
 
@@ -13,8 +13,6 @@ The goal of this exercise is to build a game.
     * Otherwise, the square is opened, and blank with Red border.
 * The game ends when all diamonds are found. The user's score is the number of squares still left unturned.
 
-
-
 ## Advanced: Added Hints
 * Part II of this problem, added hints to empty squares
 
@@ -23,7 +21,8 @@ The goal of this exercise is to build a game.
     * Any arrows that were previously show become hidden
 
 ## Starter App
-Provided is a simple application. It contains a simple UI.
+
+Provided a simple application. It contains a simple UI.
 
 Requirements:
 
